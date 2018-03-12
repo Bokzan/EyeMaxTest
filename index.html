@@ -4,31 +4,120 @@
     <meta charset="UTF-8">
     <title>EYEMAX</title>
     <link rel="stylesheet" href="/css/index.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #F4F4F4;
+        }
+        .container {
+            width: 100%;
+        }
+        .header{
+            background: #fff;
+            height: 40px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .headerInner{
+            width: 60%;
+            margin: auto;
+            line-height: 40px;
+
+        }
+
+        .innerContainer {
+            transition: all 1s;
+            -moz-transition: all 1s;	/* Firefox 4 */
+            -webkit-transition: all 1s;	/* Safari 和 Chrome */
+            -o-transition: all 1s;	/* Opera */
+            background: #fff;
+            margin: 100px auto 0;
+            width: 300px;
+            border: 5px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .innerHeader{
+            /*text-align: center;*/
+            font-size: 20px;
+            padding: 10px;
+            border-bottom:2px solid #e0e0e0;
+        }
+        .innerContent{
+            height: 500px;
+        }
+        .innerFooter{
+            border-top:4px solid #e0e0e0;
+            text-align: center;
+            font-size: 20px;
+            padding: 10px;
+        }
+        .homeButton{
+            margin: auto;
+            width: 30px;
+            height: 20px;
+            border-radius: 10px;
+            border: 3px solid #e0e0e0;
+        }
+        .scale1{
+
+            transform:scale(1.2);
+            -ms-transform:scale(1.2); 	/* IE 9 */
+            -moz-transform:scale(1.2); 	/* Firefox */
+            -webkit-transform:scale(1.2); /* Safari 和 Chrome */
+            -o-transform:scale(1.2); 	/* Opera */
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <div class="innerContianer">
 
+<div class="container">
+    <div class="header">
+        <div class="headerInner">
+            <span>EMax</span>
+        </div>
+    </div>
+    <div class="innerContainer">
+        <!--<div class="innerHeader">-->
+            <!--phone-->
+        <!--</div>-->
+        <div class="innerContent">
+            <div class="item">
+
+            </div>
+        </div>
+        <div class="innerFooter">
+            <div class="homeButton"></div>
+        </div>
     </div>
 
 </div>
-
-
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 <script>
-    $.ajax({
-        url: "http://gankeng.misney.net/users_list",
-        type: "GET",
-        data: {},
-        dataType: "json",
+    $(document).ready(function(){
 
-        error: function (data) {
-            alert("加载失败，请刷新");
-        },
-        success: function (data, status) {
-            console.log(data);
+        var scale1=self.setInterval(function () {
+            $('.innerContainer').toggleClass('scale1');
+        },1000)
 
-        }
     });
+
+
+    // $.ajax({
+    //     url: "http://gankeng.misney.net/users_list",
+    //     type: "GET",
+    //     data: {},
+    //     dataType: "json",
+    //
+    //     error: function (data) {
+    //         console.log("ajax error");
+    //     },
+    //     success: function (data, status) {
+    //         console.log(data);
+    //
+    //     }
+    // });
 </script>
 </body>
 </html>
