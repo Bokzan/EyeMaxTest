@@ -21,13 +21,19 @@
             border-bottom: 2px solid #e0e0e0;
         }
         .headerInner{
+
             width: 60%;
             margin: auto;
             line-height: 40px;
-
+            text-align: center;
         }
 
         .innerContainer {
+            transform:scale(0);
+            -ms-transform:scale(0); 	/* IE 9 */
+            -moz-transform:scale(0); 	/* Firefox */
+            -webkit-transform:scale(0); /* Safari 和 Chrome */
+            -o-transform:scale(0); 	/* Opera */
             transition: all 1s;
             -moz-transition: all 1s;	/* Firefox 4 */
             -webkit-transition: all 1s;	/* Safari 和 Chrome */
@@ -35,6 +41,8 @@
             background: #fff;
             margin: 100px auto 0;
             width: 300px;
+
+
             border: 5px solid #e0e0e0;
             border-radius: 8px;
         }
@@ -45,7 +53,10 @@
             border-bottom:2px solid #e0e0e0;
         }
         .innerContent{
+
             height: 500px;
+            overflow: scroll;
+            overflow-x:hidden;
         }
         .innerFooter{
             border-top:4px solid #e0e0e0;
@@ -62,11 +73,16 @@
         }
         .scale1{
 
-            transform:scale(1.2);
-            -ms-transform:scale(1.2); 	/* IE 9 */
-            -moz-transform:scale(1.2); 	/* Firefox */
-            -webkit-transform:scale(1.2); /* Safari 和 Chrome */
-            -o-transform:scale(1.2); 	/* Opera */
+            transform:scale(1);
+            -ms-transform:scale(1); 	/* IE 9 */
+            -moz-transform:scale(1); 	/* Firefox */
+            -webkit-transform:scale(1); /* Safari 和 Chrome */
+            -o-transform:scale(1); 	/* Opera */
+        }
+        .item{
+
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
         }
     </style>
 </head>
@@ -75,7 +91,7 @@
 <div class="container">
     <div class="header">
         <div class="headerInner">
-            <span>EMax</span>
+            <span>EMax test system</span>
         </div>
     </div>
     <div class="innerContainer">
@@ -84,25 +100,73 @@
         <!--</div>-->
         <div class="innerContent">
             <div class="item">
-
+                HTML
+            </div>  <div class="item">
+                CSS
+            </div>  <div class="item">
+                JS
+            </div>  <div class="item">
+                webstorm
+            </div>  <div class="item">
+                atom
+            </div>  <div class="item">
+                sublime
+            </div>  <div class="item">
+                vscode
+            </div>  <div class="item">
+                asdas
+            </div>  <div class="item">
+                asdas
+            </div>  <div class="item">
+                asdas
+            </div>  <div class="item">
+                asdas
+            </div>  <div class="item">
+                asdas
+            </div>  <div class="item">
+                asdas
+            </div>  <div class="item">
+                asdas
+            </div>  <div class="item">
+                asdas
+            </div>  <div class="item">
+                asdas
+            </div>  <div class="item">
+                asdas
+            </div>  <div class="item">
+                asdas
+            </div>  <div class="item">
+                asdas
+            </div>  <div class="item">
+                asdas
+            </div>  <div class="item">
+                asdas
+            </div>  <div class="item">
+                asdas
+            </div>  <div class="item">
+                asdas
             </div>
         </div>
         <div class="innerFooter">
             <div class="homeButton"></div>
         </div>
-    </div>
 
+    </div>
 </div>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 <script>
     $(document).ready(function(){
-
-        var scale1=self.setInterval(function () {
-            $('.innerContainer').toggleClass('scale1');
-        },1000)
+        $('.homeButton').click(function () {
+            $('.innerContent').scrollTop(0);
+        })
+        // var scale1=self.setInterval(function () {
+        //     $('.innerContainer').toggleClass('scale1');
+        // },1000)
+        var scale1=self.setTimeout(function () {
+            $('.innerContainer').addClass('scale1');
+        },400)
 
     });
-
 
     // $.ajax({
     //     url: "http://gankeng.misney.net/users_list",
