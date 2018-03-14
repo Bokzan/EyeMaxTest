@@ -11,17 +11,27 @@ $(document).ready(function () {
 
 });
 
-// $.ajax({
-//     url: "http://gankeng.misney.net/users_list",
-//     type: "GET",
-//     data: {},
-//     dataType: "json",
-//
-//     error: function (data) {
-//         console.log("ajax error");
-//     },
-//     success: function (data, status) {
-//         console.log(data);
-//
-//     }
-// });
+$.ajax({
+    url: "https://api.github.com/users/octocat/gists",
+    type: "POST",
+    data: {},
+    dataType: "json",
+
+    error: function (data) {
+        console.log("ajax error");
+    },
+    success: function (data, status) {
+        console.log(data);
+        for (var i = 0; i < data.length; i++) {
+            var newchild = document.createElement("div");
+
+            var child =
+                ' <div class="item">' +
+                i + '.' + data.created_at +
+                '</div>';
+
+            newchild.innerHTML = child;
+            document.getElementById("innerContent").appendChild(newchild);
+        }
+    }
+});
